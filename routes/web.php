@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\InvoiceController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -12,6 +13,9 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::post('/invoices/new', [InvoiceController::class, 'store']);
+Route::patch('/invoices/update/{invoice}', [InvoiceController::class, 'update']);
 
 Route::get('/', function () {
     return view('welcome');
